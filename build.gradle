@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'br.com.projeto.portfolio'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '13'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	compile group: 'javax', name: 'javaee-web-api', version: '7.0'
+	compile group: 'javax.xml', name: 'jaxb-impl', version: '2.1'
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+	compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0'
+	// https://mvnrepository.com/artifact/javax.xml.ws/jaxws-api
+	compile group: 'javax.xml.ws', name: 'jaxws-api', version: '2.3.1'
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4.jre6'
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.11.0'
+
+
+}
+
+test {
+	useJUnitPlatform()
+}
